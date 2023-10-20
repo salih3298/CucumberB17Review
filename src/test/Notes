@@ -1,0 +1,20 @@
+Steps to create Framework:
+1.	Add the dependencies to POM.xml
+2.	Reload project.
+3.	Delete main folder.
+4.	Add directory recourses under TEST folder.
+5.	Create config and features directories under resources.
+6.	Under config create config.properties file (used for key value pair important info(url/browser/etc))
+7.	Under feature folder create Login.feature file (u can name is differently)
+8.	Add steps to your feature file
+    (Feature: Login Feature Scenario: user enters correct credentials and is able to login
+    Given user navigates to the website
+    When user enters the credentials
+    And user clicks on login button
+    Then user is successfully logged in )
+9.	Under Java create utils, steps and runners directories
+10.	Under utils create CommonMethods ConfigReader and Constants classes
+11.	Add common methods that we already have in a different project to CommonMethods class
+12.	Same with Constants, add them from a different project to Constants class
+13.	Also add config reader code from a different project to ConfigReader class
+
