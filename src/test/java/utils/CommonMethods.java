@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CommonMethods {
-    public static WebDriver driver;
+public class CommonMethods extends PageInitializers {
+    public static WebDriver driver; // the driver instance is common through out the project
     public static void openBrowserAndLaunchApplication(){
+//        read the property file
         ConfigReader.readProperties(Constants.CONFIGURATION_FILEPATH);
+//        we are reading the key browser from the property file
         switch (ConfigReader.getPropertyValue("browser")){
             case "chrome":
                 driver = new ChromeDriver();
@@ -27,6 +29,7 @@ public class CommonMethods {
         driver.manage().window().maximize();
         driver.get(ConfigReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT));
+        initializePageObjects();
     }
 
     public static void sendText(WebElement element, String textToSend){
