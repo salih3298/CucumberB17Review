@@ -1,6 +1,12 @@
 Feature: Login Feature
-  Scenario: user enters correct credentials and is able to login
+
+  Scenario Outline: user enters the incorrect credentials and verify the error message
     Given user navigate to the Website
-    When user enters the credentials
+    When user enters the credentials "<username>" "<password>"
     And click on login button
-    Then the user is logged in
+    Then verify the error message is "<Message>"
+    Examples:
+      | username | password    | Message                  |
+      | Admin    | Hum@nhrm    | Invalid credentials      |
+      | Ad       | Hum@nhrm123 | Invalid credentials      |
+      |          |             | Username cannot be empty |

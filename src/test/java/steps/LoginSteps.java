@@ -3,27 +3,31 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import utils.CommonMethods;
 
-public class LoginSteps {
+public class LoginSteps extends CommonMethods {
+
     @Given("user navigate to the Website")
     public void user_navigate_to_the_website() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        openBrowserAndLaunchApplication();
     }
-    @When("user enters the credentials")
-    public void user_enters_the_credentials() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @When("user enters the credentials {string} {string}")
+    public void user_enters_the_credentials(String username, String password) {
+        sendText(loginPage.usernameTextField,username);
+        sendText(loginPage.passwordTextField,password);
     }
     @When("click on login button")
     public void click_on_login_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        click(loginPage.loginBtn);
     }
-    @Then("the user is logged in")
-    public void the_user_is_logged_in() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("verify the error message is {string}")
+    public void verify_the_error_message_is(String expectedErrorMessage) {
+        String actualErrorMessage = loginPage.actualErrorMsg.getText();
+        Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
+
     }
+
 
 }

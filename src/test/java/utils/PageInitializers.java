@@ -1,5 +1,10 @@
 package utils;
 
+import pages.AddEmployeePage;
+import pages.DashboardPage;
+import pages.EmployeeSearchPage;
+import pages.LoginPage;
+
 public class PageInitializers {
     public static LoginPage loginPage;
     public static DashboardPage dashboardPage;
@@ -15,4 +20,3 @@ public class PageInitializers {
     }
 
 }
-
