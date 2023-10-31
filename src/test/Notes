@@ -62,3 +62,26 @@ While using driver.findElement directly might seem simpler for small projects or
 as your testing suite grows, direct element calls can make your tests harder to maintain.
 Adopting Page Factory and the Page Object Model provides scalability, readability,
 and maintainability advantages in the long run.
+
+
+**************************************************************
+
+The code is wrapped in a Cucumber step definition, indicated by the @When annotation, which suggests that it is used in a behavior-driven development (BDD) framework to define test scenarios.
+
+The step definition method is named user_adds_multiple_employees_from_excel_using_and_verify_them and takes a single parameter, sheetName, which is a string representing the name of an Excel sheet.
+
+Inside the method, the code performs the following tasks:
+
+a. Reads data from an Excel sheet specified by the sheetName using a custom ExcelReader class and stores it in a List of Map objects. Each Map represents the data for a single employee.
+
+b. Iterates over the list of Map objects using an Iterator to process each employee's data one at a time.
+
+c. For each employee, it extracts data such as first name, middle name, last name, photograph, username, and password from the Map.
+
+d. It interacts with web elements (assumed to be part of a web application) using methods like sendText, click, and getAttribute to add an employee's details and click the save button.
+
+e. After saving an employee, it retrieves the employee's ID from the web page.
+
+f. It clicks on an "Employee List" button on the dashboard to navigate to a page where employee information is displayed in a table.
+
+g. It searches for the newly added employee using their ID in a search field and clicks the search button.

@@ -2,7 +2,7 @@ Feature: Login Feature
 
   @fail
   Scenario Outline: user enters the incorrect credentials and verify the error message
-    Given user navigate to the Website
+   # Given user navigate to the Website
     When user enters the credentials "<username>" "<password>"
     And click on login button
     Then verify the error message is "<Message>"
