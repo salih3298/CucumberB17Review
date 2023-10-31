@@ -8,16 +8,18 @@ import utils.CommonMethods;
 
 public class EmployeeSearchPage extends CommonMethods {
 
-    @FindBy(id="empsearch_id")
+    @FindBy(id = "empsearch_id")
     public WebElement empSearchIdField;
 
-    @FindBy(id="empsearch_employee_name_empName")
+    @FindBy(id = "empsearch_employee_name_empName")
     public WebElement empSearchNameField;
 
-    @FindBy(id="searchBtn")
+    @FindBy(id = "searchBtn")
     public WebElement searchBtn;
+    @FindBy(xpath = "//table/tbody/tr/td[2]")
+    public WebElement addemployeeSearchResult;
 
-    public EmployeeSearchPage(){
+    public EmployeeSearchPage() {
         PageFactory.initElements(driver, this);
     }
 }

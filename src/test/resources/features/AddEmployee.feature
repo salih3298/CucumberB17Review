@@ -2,7 +2,7 @@ Feature: adding an Employee
 
   Background:
     Given user navigate to the Website
-    When user enters the credentials "<username>" "<password>"
+    When user enters the credentials "admin" "Hum@nhrm123"
     And click on login button
     When user clicks on PIM option
     And user clicks on add employee option
